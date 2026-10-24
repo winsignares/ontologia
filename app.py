@@ -138,4 +138,22 @@ propiedades = [
 for propiedad in propiedades:
     g.add((propiedad, RDF.type, RDF.Property))
 
-#
+#Documentamos el significado de la parte ontologica con sus propiedades
+
+g.add((
+    UNI.tieneTexto,
+    RDFS.comment,
+    Literal("Texto original de una solicitud.", lang="es")
+))
+
+g.add((
+    UNI.tieneIntencion,
+    RDFS.comment,
+    Literal("Intencion identifica para una solicitud.", lang="es")
+))
+
+g.add((
+    UNI.requiereServicio,
+    RDFS.comment,
+    Literal("Servicio asociado a una intencion.", lang="es")
+))
