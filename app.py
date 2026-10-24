@@ -87,3 +87,11 @@ def normalizar(texto):
 def tokenizar(texto):
     #primero normalizamos el texto y despues lo separamos por espacio 
     return normalizar(texto).split()
+
+print("Ejemplo de PLN")
+
+frase = "Olvidé mi contraseña de usuario y no puedo iniciar sesión"
+
+print("Texto original ", frase)
+print("Texto normalizado ", normalizar(frase))
+print("tokens ",tokenizar(frase))
