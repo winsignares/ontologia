@@ -7,10 +7,11 @@
 
 # ------------------------------------------------------------
 # 1. IMPORTAR LAS BIBLIOTECAS
+# rdflib
+# pandas
+# scikit-learn
 # ------------------------------------------------------------
-rdflib
-pandas
-scikit-learn
+
 
 import re
 import unicodedata
