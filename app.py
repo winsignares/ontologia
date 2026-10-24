@@ -95,3 +95,34 @@ frase = "Olvidé mi contraseña de usuario y no puedo iniciar sesión"
 print("Texto original ", frase)
 print("Texto normalizado ", normalizar(frase))
 print("tokens ",tokenizar(frase))
+
+#5. Creamos nuestra Ontologia con el RDF
+
+g = Graph()
+
+UNI = Namespace("http://ejmplo.org/universidad#")
+
+#creamos un prefijo uni para facilitar la lectura
+
+g.bind("uni",UNI)
+g.bind("rdf", RDF)
+g.bind("rdfs", RDFS)
+
+#creamos una clase para representar las diferentes entidades 
+#Solicitud, Intencio, Servicio, Usuario, Estudiante,
+
+clases = [
+    UNI.Usuario,
+    UNI.Estudiante,
+    UNI.Solicitud,
+    UNI.Intencion,
+    UNI.Servicio
+]
+
+for clase in clases:
+    g.add((clase, RDF.type, RDFS.Class))
+
+#Defineme las relaciones entre herencia
+#todo Estudiantes pertenece a la clase Usuario
+
+g.add((UNI.Estudiante,RDFS.subClassOf, UNI.Usuario))
