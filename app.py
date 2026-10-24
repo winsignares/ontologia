@@ -217,3 +217,30 @@ for intencion, nombre_servicio in servicios.items():
         UNI.requiereServicio,
         concepto_servicio
     ))
+
+#incorporamos las solicitudes al corpus
+
+
+for documento in corpus:
+    solicitud = UNI[f"Solicitud_{documento['id']}"]
+
+    nombre_concepto = "".join(
+        palabra.capitalize()
+        for palabra in documento["intencion"].split("_")
+    )
+
+    concepto_intencion = UNI[nombre_concepto]
+
+    #Declara que el recurso es una solicitud
+
+    g.add((solicitud,RDF.type, UNI.Solicitud ))
+
+    #almacenar la frase original 
+    g.add((
+        solicitud, 
+        UNI.tieneIntencion,
+        concepto_intencion
+    ))
+
+print("******Ontologia Construida*******")
+print("Numero de tripletas RDF:",len(g))
