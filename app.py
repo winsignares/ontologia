@@ -157,3 +157,22 @@ g.add((
     RDFS.comment,
     Literal("Servicio asociado a una intencion.", lang="es")
 ))
+
+#Relacionar las intenciones con el servicio
+
+servicios = {
+    "recuperar_contraseña":"PortalAutoservicio",
+    "reportar_incidente": "MesaDeAyuda",
+    "consultar_fecha": "CalendarioAcademico",
+    "actualizar_correo":"GestionDeCuenta",
+    "solicitar_certificado": "SecretariaAcademica"
+}
+descripcion_servicios = {
+    "PortalAutoservicio": "Utiliza el portal autoservicio para restablecer tu contraseña",
+    "MesaDeAyuda": "Contacta a la mesa de ayuda para reportar el incidente",
+    "CalendarioAcademico": "Consulta calendario academico y saber las fechas de entrega",
+    "GestionDeCuenta": "Utiliza el servicio de gestion de cuenta para actualizar tus datos o correo",
+    "SecretariaAcademica": "Consulta con la secretaria academica como solicitar certificado"
+}
+
+
