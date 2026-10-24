@@ -137,4 +137,5 @@ propiedades = [
 
 for propiedad in propiedades:
     g.add((propiedad, RDF.type, RDF.Property))
-    
+
+#
