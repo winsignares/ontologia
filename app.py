@@ -189,3 +189,15 @@ for intencion in servicios.keys():
         RDFS.label, 
         Literal(intencion.replace("_"," "), lang="es")
         ))
+
+#Creamos la instancia con la parte de servicio
+
+for nombre_servicio in servicios.values():
+    servicio = UNI[nombre_servicio]
+    g.add((servicio,RDF.type, UNI.Servicio))
+
+    g.add((
+            servicio, 
+            RDFS.label, 
+            Literal(nombre_servicio, lang="es")
+        ))
