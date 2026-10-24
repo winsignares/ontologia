@@ -83,3 +83,7 @@ def normalizar(texto):
     texto = re.sub(r"\s+"," ",texto).strip()
 
     return texto
+
+def tokenizar(texto):
+    #primero normalizamos el texto y despues lo separamos por espacio 
+    return normalizar(texto).split()
