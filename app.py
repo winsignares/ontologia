@@ -1,6 +1,6 @@
 #importamos librerias
 import re
-import unicadedata
+import unicodedata
 import pandas as pd
 
 from rdflib import Graph, Namespace, RDF, RDFS, Literal
