@@ -176,3 +176,16 @@ descripcion_servicios = {
 }
 
 
+for intencion in servicios.keys():
+    nombre_concepto = "".join(
+        palabra.capitalize()
+        for palabra in intencion.split("_")
+    )
+    concepto = UNI[nombre_concepto]
+    g.add((concepto,RDF.type, UNI.Intencion))
+
+    g.add((
+        concepto, 
+        RDFS.label, 
+        Literal(intencion.replace("_"," "), lang="es")
+        ))
