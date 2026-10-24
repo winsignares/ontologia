@@ -126,3 +126,15 @@ for clase in clases:
 #todo Estudiantes pertenece a la clase Usuario
 
 g.add((UNI.Estudiante,RDFS.subClassOf, UNI.Usuario))
+
+#Definimos las propiedades Semanticas
+
+propiedades = [
+        UNI.tieneTexto,
+        UNI.tieneIntencion,
+        UNI.requiereServicio
+]
+
+for propiedad in propiedades:
+    g.add((propiedad, RDF.type, RDF.Property))
+    
