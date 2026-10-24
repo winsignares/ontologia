@@ -54,3 +54,13 @@ corpus = [
         "intencion": "reportar_falla_plataforma",
     }
 ]
+
+#3. Visualizamos el corpus
+
+df = pd.DataFrame(corpus)
+
+print(df.to_string(index=False))
+
+print(f"Cantidad de datos {len(df)}")
+
+print(f"Cantidad de intenciones {df['intencion'].value_counts()}")
