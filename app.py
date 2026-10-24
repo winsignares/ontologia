@@ -201,3 +201,19 @@ for nombre_servicio in servicios.values():
             RDFS.label, 
             Literal(nombre_servicio, lang="es")
         ))
+
+#Relacionar las intenciones con el Servicio
+
+for intencion, nombre_servicio in servicios.items():
+    nombre_concepto = "".join(
+        palabra.capitalize()
+        for palabra in intencion.split("_")
+    )
+    concepto_intencion = UNI[nombre_concepto]
+    concepto_servicio = UNI[nombre_servicio]
+
+    g.add((
+        concepto_intencion,
+        UNI.requiereServicio,
+        concepto_servicio
+    ))
