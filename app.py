@@ -64,3 +64,22 @@ print(df.to_string(index=False))
 print(f"Cantidad de datos {len(df)}")
 
 print(f"Cantidad de intenciones {df['intencion'].value_counts()}")
+
+#4. Tokenización y Normalización
+
+def normalizar(texto):
+    texto = texto.lower().strip()
+    #noralizamos los caracteres con Unicode y NFD
+    texto_unicode = unicodedata.normalize("NFD",texto)
+    texto = "".join(
+        caracter
+        for caracter in texto_unicode
+        if unicodedata.category(caracter)!="Mn"
+    )
+
+    #conservamos las letras, numeros y espacios
+    texto = re.sub(r"[^a-z0-9\s]"," ",texto)
+    #eliminamos espacio repetidos
+    texto = re.sub(r"\s+"," ",texto).strip()
+
+    return texto
